@@ -16,5 +16,20 @@ namespace SecurityToolbox
         {
             InitializeComponent();
         }
+
+        private void tabIpTools_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var x = sender as TabControl;
+            var m = x.SelectedIndex;
+
+            if(m == 0)
+            {
+                lblTabHeader.Text = "IP Lookup Tools";
+            }
+            if(m == 1)
+            {
+                lblTabHeader.Text = "Encoding/Decoding Tools";
+            }
+        }
     }
 }

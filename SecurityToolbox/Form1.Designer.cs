@@ -48,6 +48,7 @@
             this.tsFileOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.iPLookupAPIKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTabHeader = new System.Windows.Forms.Label();
             this.tabIpTools.SuspendLayout();
             this.ipTools.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -57,11 +58,12 @@
             // 
             this.tabIpTools.Controls.Add(this.ipTools);
             this.tabIpTools.Controls.Add(this.encodingTools);
-            this.tabIpTools.Location = new System.Drawing.Point(31, 64);
+            this.tabIpTools.Location = new System.Drawing.Point(39, 59);
             this.tabIpTools.Name = "tabIpTools";
             this.tabIpTools.SelectedIndex = 0;
-            this.tabIpTools.Size = new System.Drawing.Size(1351, 793);
+            this.tabIpTools.Size = new System.Drawing.Size(1329, 793);
             this.tabIpTools.TabIndex = 0;
+            this.tabIpTools.SelectedIndexChanged += new System.EventHandler(this.tabIpTools_SelectedIndexChanged);
             // 
             // ipTools
             // 
@@ -78,7 +80,7 @@
             this.ipTools.Controls.Add(this.txtIpInput);
             this.ipTools.Location = new System.Drawing.Point(4, 22);
             this.ipTools.Name = "ipTools";
-            this.ipTools.Size = new System.Drawing.Size(1343, 767);
+            this.ipTools.Size = new System.Drawing.Size(1321, 767);
             this.ipTools.TabIndex = 0;
             this.ipTools.Text = "IP Tools";
             this.ipTools.UseVisualStyleBackColor = true;
@@ -86,7 +88,7 @@
             // linkCopyIpToClip
             // 
             this.linkCopyIpToClip.AutoSize = true;
-            this.linkCopyIpToClip.Location = new System.Drawing.Point(1138, 734);
+            this.linkCopyIpToClip.Location = new System.Drawing.Point(1174, 733);
             this.linkCopyIpToClip.Name = "linkCopyIpToClip";
             this.linkCopyIpToClip.Size = new System.Drawing.Size(122, 13);
             this.linkCopyIpToClip.TabIndex = 10;
@@ -95,7 +97,7 @@
             // 
             // txtIpApiKey
             // 
-            this.txtIpApiKey.Location = new System.Drawing.Point(675, 734);
+            this.txtIpApiKey.Location = new System.Drawing.Point(785, 733);
             this.txtIpApiKey.Name = "txtIpApiKey";
             this.txtIpApiKey.Size = new System.Drawing.Size(297, 20);
             this.txtIpApiKey.TabIndex = 9;
@@ -104,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(621, 739);
+            this.label1.Location = new System.Drawing.Point(731, 736);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 8;
@@ -112,7 +114,7 @@
             // 
             // btnIpReset
             // 
-            this.btnIpReset.Location = new System.Drawing.Point(293, 730);
+            this.btnIpReset.Location = new System.Drawing.Point(283, 731);
             this.btnIpReset.Name = "btnIpReset";
             this.btnIpReset.Size = new System.Drawing.Size(75, 23);
             this.btnIpReset.TabIndex = 7;
@@ -174,7 +176,7 @@
             this.txtIpOutput.Multiline = true;
             this.txtIpOutput.Name = "txtIpOutput";
             this.txtIpOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtIpOutput.Size = new System.Drawing.Size(1058, 678);
+            this.txtIpOutput.Size = new System.Drawing.Size(1094, 678);
             this.txtIpOutput.TabIndex = 1;
             // 
             // txtIpInput
@@ -235,12 +237,26 @@
             this.tsExit.Size = new System.Drawing.Size(152, 22);
             this.tsExit.Text = "Exit";
             // 
+            // lblTabHeader
+            // 
+            this.lblTabHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTabHeader.AutoSize = true;
+            this.lblTabHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTabHeader.Location = new System.Drawing.Point(572, 32);
+            this.lblTabHeader.Name = "lblTabHeader";
+            this.lblTabHeader.Size = new System.Drawing.Size(187, 34);
+            this.lblTabHeader.TabIndex = 2;
+            this.lblTabHeader.Text = "IP Lookup Tools";
+            this.lblTabHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTabHeader.UseCompatibleTextRendering = true;
+            // 
             // SecToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1412, 890);
+            this.Controls.Add(this.lblTabHeader);
             this.Controls.Add(this.tabIpTools);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -278,6 +294,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsFileOptions;
         private System.Windows.Forms.ToolStripMenuItem iPLookupAPIKeyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsExit;
+        private System.Windows.Forms.Label lblTabHeader;
     }
 }
 
