@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecToolForm));
             this.tabIpTools = new System.Windows.Forms.TabControl();
             this.ipTools = new System.Windows.Forms.TabPage();
             this.linkCopyIpToClip = new System.Windows.Forms.LinkLabel();
@@ -44,6 +45,9 @@
             this.encodingTools = new System.Windows.Forms.TabPage();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsFileOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.iPLookupAPIKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tabIpTools.SuspendLayout();
             this.ipTools.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -53,7 +57,7 @@
             // 
             this.tabIpTools.Controls.Add(this.ipTools);
             this.tabIpTools.Controls.Add(this.encodingTools);
-            this.tabIpTools.Location = new System.Drawing.Point(12, 39);
+            this.tabIpTools.Location = new System.Drawing.Point(31, 64);
             this.tabIpTools.Name = "tabIpTools";
             this.tabIpTools.SelectedIndex = 0;
             this.tabIpTools.Size = new System.Drawing.Size(1351, 793);
@@ -198,24 +202,48 @@
             this.fileToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1375, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1412, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsFileOptions,
+            this.tsExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // tsFileOptions
+            // 
+            this.tsFileOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iPLookupAPIKeyToolStripMenuItem});
+            this.tsFileOptions.Name = "tsFileOptions";
+            this.tsFileOptions.Size = new System.Drawing.Size(152, 22);
+            this.tsFileOptions.Text = "Options";
+            // 
+            // iPLookupAPIKeyToolStripMenuItem
+            // 
+            this.iPLookupAPIKeyToolStripMenuItem.Name = "iPLookupAPIKeyToolStripMenuItem";
+            this.iPLookupAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.iPLookupAPIKeyToolStripMenuItem.Text = "IP Lookup API Key";
+            // 
+            // tsExit
+            // 
+            this.tsExit.Name = "tsExit";
+            this.tsExit.Size = new System.Drawing.Size(152, 22);
+            this.tsExit.Text = "Exit";
             // 
             // SecToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1375, 844);
+            this.ClientSize = new System.Drawing.Size(1412, 890);
             this.Controls.Add(this.tabIpTools);
             this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "SecToolForm";
             this.Text = "Security Toolbox";
@@ -247,6 +275,9 @@
         private System.Windows.Forms.TabPage encodingTools;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsFileOptions;
+        private System.Windows.Forms.ToolStripMenuItem iPLookupAPIKeyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsExit;
     }
 }
 
