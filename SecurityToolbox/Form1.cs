@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SecurityToolbox
 {
-    public partial class Form1 : Form
+    public partial class SecToolForm : Form
     {
-        public Form1()
+        public SecToolForm()
         {
             InitializeComponent();
         }
