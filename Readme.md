@@ -19,6 +19,6 @@ When running the application, the checkbox option for blacklist info makes indiv
 ##### ToDo:
 - Add threadding so long lookups don't block the UI + add progress indicators etc (also bulk reverse-dns for performance)
 - Add Encoding/Decoding features in tab2
-
+ 
 Enjoy,
 Darron
