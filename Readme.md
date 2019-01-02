@@ -16,5 +16,9 @@ The Public IP lookup feature is working, but it needs more robust error handling
 
 When running the application, the checkbox option for blacklist info makes individual dns queries against the spamhaus blacklist db for each ip in the list, this is slow and I hope to refactor this to do batch lookups as well if possible.
 
+##### ToDo:
+- Add threadding so long lookups don't block the UI + add progress indicators etc (also bulk reverse-dns for performance)
+- Add Encoding/Decoding features in tab2
+
 Enjoy,
 Darron
