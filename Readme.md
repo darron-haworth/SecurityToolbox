@@ -6,7 +6,7 @@
 
 **Manufacturer**: Darron Haworth
 
-**Version**: 1.2.0.0 - Public  IP Lookup tab complete
+**Version**: 1.2.0.0 - Public  IP Lookup tab complete 
 
 **Support Info**:  This app is a work in progress, built for myself and my personal use I thought it might be useful to others. This application is not officially supported, if you have issues with the tool or would like to make feature enhancements email darron.haworth@gmail.com
 
