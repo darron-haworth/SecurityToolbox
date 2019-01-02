@@ -1,8 +1,11 @@
 # Security Toolbox
 
 **Application**: Personal Security Toolbox
+
 **Manufacturer**: Darron Haworth
+
 **Version**: 1.2.0.0 - Public  IP Lookup tab complete
+
 **Support Info**:  Not officially supported, if you have issues with the tool or would like to make feature enhancements email darron.haworth@firsttechfed.com
 
 **Release Notes**:
