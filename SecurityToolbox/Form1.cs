@@ -80,9 +80,10 @@ namespace SecurityToolbox
             txtIpOutput.Text = string.Format("{0}", headerList);
             foreach (IpAddressData item in ipResults.IpAddressData)
             {
+                var dnsRepo = new DnsQueryRepo();
                 if (cbIncludeBlacklist.Checked)
                 {
-                    item.BlackList = GetBlockedStatus(item.IpAddress);
+                    item.BlackList = dnsRepo.GetIndividualIpBlockedStatus(item.IpAddress);
                 }
 
                 txtIpOutput.Text += string.Format("{0}{13}{1}{13}{2}{13}{3}{13}{4}{13}{5}{13}{6}{13}{7}{13}{8}{13}{9}{13}{10}{13}{11}{13}{12}\r\n",
@@ -111,22 +112,7 @@ namespace SecurityToolbox
 
         }
 
-        private string GetBlockedStatus(string ip)
-        {
-            var returnText = "";
-            VerifyIP IP = new VerifyIP(ip, new string[] { "sbl-xbl.spamhaus.org", "bl.spamcop.net", "cbl.abuseat.org", "zen.spamhaus.org" });
-            if (IP.IPAddr.Valid)
-                if (IP.BlackList.IsListed)
-                {
-
-                    returnText = String.Format("{0} - {1}", IP.BlackList.VerifiedOnServer.Replace("sbl-xbl.", ""), StringUtils.CodeToDescription(IP.BlackList.ReturnCode));
-                }
-                else
-                {
-                    returnText = String.Format("{0}", "Not listed");
-                }
-            return returnText;
-        }
+        
 
         private void btnIpLookup_Click(object sender, EventArgs e)
         {

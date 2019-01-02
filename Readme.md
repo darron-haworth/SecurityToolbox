@@ -6,7 +6,7 @@
 
 **Version**: 1.2.0.0 - Public  IP Lookup tab complete
 
-**Support Info**:  Not officially supported, if you have issues with the tool or would like to make feature enhancements email darron.haworth@firsttechfed.com
+**Support Info**:  Not officially supported, if you have issues with the tool or would like to make feature enhancements email darron.haworth@gmail.com
 
 **Release Notes**:
 
