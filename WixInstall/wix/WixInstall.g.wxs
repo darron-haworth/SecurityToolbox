@@ -16,17 +16,17 @@
           <Directory Id="INSTALLDIR" Name="SecurityToolbox">
 
             <Component Id="Component.SecurityToolbox.exe" Guid="d585bc49-de75-4d36-9515-ed3c4aeb5e5e" Win64="yes">
-              <File Id="SecurityToolbox.exe" Source="..\SecurityToolbox\bin\Debug\SecurityToolbox.exe" KeyPath="yes">
+              <File Id="SecurityToolbox.exe" Source="..\SecurityToolbox\bin\Release\SecurityToolbox.exe" KeyPath="yes">
                 <Shortcut Id="Shortcut.SecurityToolbox.exe.Personal_Security_Toolbox" WorkingDirectory="INSTALLDIR" Directory="DesktopFolder" Name="Personal Security Toolbox.lnk" Advertise="yes" Icon="IconFile1_RDH.ico" IconIndex="0" />
               </File>
             </Component>
 
             <Component Id="Component.Newtonsoft.Json.dll" Guid="d585bc49-de75-4d36-9515-ed3ca83863d6" Win64="yes">
-              <File Id="Newtonsoft.Json.dll" Source="..\SecurityToolbox\Bin\Debug\Newtonsoft.Json.dll" />
+              <File Id="Newtonsoft.Json.dll" Source="..\SecurityToolbox\Bin\Release\Newtonsoft.Json.dll" />
             </Component>
 
             <Component Id="Component.RestSharp.dll" Guid="d585bc49-de75-4d36-9515-ed3ce38bf4c6" Win64="yes">
-              <File Id="RestSharp.dll" Source="..\SecurityToolbox\Bin\Debug\RestSharp.dll" />
+              <File Id="RestSharp.dll" Source="..\SecurityToolbox\Bin\Release\RestSharp.dll" />
             </Component>
 
           </Directory>
