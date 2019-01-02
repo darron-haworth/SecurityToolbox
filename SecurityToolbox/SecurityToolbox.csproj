@@ -58,9 +58,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BulkIpBody.cs" />
+    <Compile Include="Models\IpAddressData.cs" />
+    <Compile Include="Models\IpApiResponse.cs" />
+    <Compile Include="Models\RootIpAddressLookupList.cs" />
+    <Compile Include="Models\VerifyIP.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IpAddressRepo.cs" />
+    <Compile Include="Utilities\IpApiHeaders.cs" />
+    <Compile Include="Utilities\StringUtils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +81,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SecurityToolbox.Models.RootIpAddressLookup.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,10 +95,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Utilities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="assets\FTICON.ico" />
   </ItemGroup>
