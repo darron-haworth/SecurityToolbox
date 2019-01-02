@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecToolForm));
             this.tabIpTools = new System.Windows.Forms.TabControl();
             this.ipTools = new System.Windows.Forms.TabPage();
+            this.lblElapsedValue = new System.Windows.Forms.Label();
+            this.lblElapsed = new System.Windows.Forms.Label();
+            this.lblCountValue = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.cbIncludeBlacklist = new System.Windows.Forms.CheckBox();
             this.dgIpResults = new System.Windows.Forms.DataGridView();
             this.linkCopyIpToClip = new System.Windows.Forms.LinkLabel();
             this.btnIpReset = new System.Windows.Forms.Button();
@@ -50,11 +55,6 @@
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTabHeader = new System.Windows.Forms.Label();
             this.rootIpAddressLookupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cbIncludeBlacklist = new System.Windows.Forms.CheckBox();
-            this.lblCount = new System.Windows.Forms.Label();
-            this.lblCountValue = new System.Windows.Forms.Label();
-            this.lblElapsed = new System.Windows.Forms.Label();
-            this.lblElapsedValue = new System.Windows.Forms.Label();
             this.tabIpTools.SuspendLayout();
             this.ipTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgIpResults)).BeginInit();
@@ -95,8 +95,54 @@
             this.ipTools.Name = "ipTools";
             this.ipTools.Size = new System.Drawing.Size(1842, 767);
             this.ipTools.TabIndex = 0;
-            this.ipTools.Text = "IP Tools";
+            this.ipTools.Text = "Public IP Lookup";
             this.ipTools.UseVisualStyleBackColor = true;
+            // 
+            // lblElapsedValue
+            // 
+            this.lblElapsedValue.AutoSize = true;
+            this.lblElapsedValue.Location = new System.Drawing.Point(1018, 740);
+            this.lblElapsedValue.Name = "lblElapsedValue";
+            this.lblElapsedValue.Size = new System.Drawing.Size(28, 13);
+            this.lblElapsedValue.TabIndex = 16;
+            this.lblElapsedValue.Text = "0:00";
+            // 
+            // lblElapsed
+            // 
+            this.lblElapsed.AutoSize = true;
+            this.lblElapsed.Location = new System.Drawing.Point(946, 740);
+            this.lblElapsed.Name = "lblElapsed";
+            this.lblElapsed.Size = new System.Drawing.Size(77, 13);
+            this.lblElapsed.TabIndex = 15;
+            this.lblElapsed.Text = "Elapsed Time: ";
+            // 
+            // lblCountValue
+            // 
+            this.lblCountValue.AutoSize = true;
+            this.lblCountValue.Location = new System.Drawing.Point(713, 740);
+            this.lblCountValue.Name = "lblCountValue";
+            this.lblCountValue.Size = new System.Drawing.Size(13, 13);
+            this.lblCountValue.TabIndex = 14;
+            this.lblCountValue.Text = "1";
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(638, 740);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(77, 13);
+            this.lblCount.TabIndex = 13;
+            this.lblCount.Text = "Lookup Count:";
+            // 
+            // cbIncludeBlacklist
+            // 
+            this.cbIncludeBlacklist.AutoSize = true;
+            this.cbIncludeBlacklist.Location = new System.Drawing.Point(422, 736);
+            this.cbIncludeBlacklist.Name = "cbIncludeBlacklist";
+            this.cbIncludeBlacklist.Size = new System.Drawing.Size(163, 17);
+            this.cbIncludeBlacklist.TabIndex = 12;
+            this.cbIncludeBlacklist.Text = "Include Blacklist Info (slower)";
+            this.cbIncludeBlacklist.UseVisualStyleBackColor = true;
             // 
             // dgIpResults
             // 
@@ -231,7 +277,7 @@
             this.tsFileOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.iPLookupAPIKeyToolStripMenuItem});
             this.tsFileOptions.Name = "tsFileOptions";
-            this.tsFileOptions.Size = new System.Drawing.Size(116, 22);
+            this.tsFileOptions.Size = new System.Drawing.Size(152, 22);
             this.tsFileOptions.Text = "Options";
             // 
             // iPLookupAPIKeyToolStripMenuItem
@@ -243,7 +289,7 @@
             // tsExit
             // 
             this.tsExit.Name = "tsExit";
-            this.tsExit.Size = new System.Drawing.Size(116, 22);
+            this.tsExit.Size = new System.Drawing.Size(152, 22);
             this.tsExit.Text = "Exit";
             // 
             // lblTabHeader
@@ -256,61 +302,15 @@
             this.lblTabHeader.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblTabHeader.Location = new System.Drawing.Point(833, 32);
             this.lblTabHeader.Name = "lblTabHeader";
-            this.lblTabHeader.Size = new System.Drawing.Size(187, 34);
+            this.lblTabHeader.Size = new System.Drawing.Size(194, 34);
             this.lblTabHeader.TabIndex = 2;
-            this.lblTabHeader.Text = "IP Lookup Tools";
+            this.lblTabHeader.Text = "Public IP Lookup";
             this.lblTabHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblTabHeader.UseCompatibleTextRendering = true;
             // 
             // rootIpAddressLookupBindingSource
             // 
             this.rootIpAddressLookupBindingSource.DataSource = typeof(SecurityToolbox.Models.RootIpAddressLookup);
-            // 
-            // cbIncludeBlacklist
-            // 
-            this.cbIncludeBlacklist.AutoSize = true;
-            this.cbIncludeBlacklist.Location = new System.Drawing.Point(422, 736);
-            this.cbIncludeBlacklist.Name = "cbIncludeBlacklist";
-            this.cbIncludeBlacklist.Size = new System.Drawing.Size(163, 17);
-            this.cbIncludeBlacklist.TabIndex = 12;
-            this.cbIncludeBlacklist.Text = "Include Blacklist Info (slower)";
-            this.cbIncludeBlacklist.UseVisualStyleBackColor = true;
-            // 
-            // lblCount
-            // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.Location = new System.Drawing.Point(638, 740);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(77, 13);
-            this.lblCount.TabIndex = 13;
-            this.lblCount.Text = "Lookup Count:";
-            // 
-            // lblCountValue
-            // 
-            this.lblCountValue.AutoSize = true;
-            this.lblCountValue.Location = new System.Drawing.Point(713, 740);
-            this.lblCountValue.Name = "lblCountValue";
-            this.lblCountValue.Size = new System.Drawing.Size(13, 13);
-            this.lblCountValue.TabIndex = 14;
-            this.lblCountValue.Text = "1";
-            // 
-            // lblElapsed
-            // 
-            this.lblElapsed.AutoSize = true;
-            this.lblElapsed.Location = new System.Drawing.Point(946, 740);
-            this.lblElapsed.Name = "lblElapsed";
-            this.lblElapsed.Size = new System.Drawing.Size(77, 13);
-            this.lblElapsed.TabIndex = 15;
-            this.lblElapsed.Text = "Elapsed Time: ";
-            // 
-            // lblElapsedValue
-            // 
-            this.lblElapsedValue.AutoSize = true;
-            this.lblElapsedValue.Location = new System.Drawing.Point(1018, 740);
-            this.lblElapsedValue.Name = "lblElapsedValue";
-            this.lblElapsedValue.Size = new System.Drawing.Size(28, 13);
-            this.lblElapsedValue.TabIndex = 16;
-            this.lblElapsedValue.Text = "0:00";
             // 
             // SecToolForm
             // 
