@@ -277,7 +277,7 @@
             this.tsFileOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.iPLookupAPIKeyToolStripMenuItem});
             this.tsFileOptions.Name = "tsFileOptions";
-            this.tsFileOptions.Size = new System.Drawing.Size(152, 22);
+            this.tsFileOptions.Size = new System.Drawing.Size(116, 22);
             this.tsFileOptions.Text = "Options";
             // 
             // iPLookupAPIKeyToolStripMenuItem
@@ -289,7 +289,7 @@
             // tsExit
             // 
             this.tsExit.Name = "tsExit";
-            this.tsExit.Size = new System.Drawing.Size(152, 22);
+            this.tsExit.Size = new System.Drawing.Size(116, 22);
             this.tsExit.Text = "Exit";
             // 
             // lblTabHeader
