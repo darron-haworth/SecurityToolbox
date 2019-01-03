@@ -31,7 +31,7 @@ namespace SecurityToolbox
             }
             catch { }
             txtIpInput.Text = publicIP.Trim();
-            DoLookup();
+           // DoLookup();
 
         }
 

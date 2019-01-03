@@ -75,6 +75,7 @@ namespace SecurityToolbox.Repository
             request.AddParameter("application/json", output, ParameterType.RequestBody);
 
             // execute the request
+            //client.Timeout = 5000000;
             IRestResponse response = client.Execute(request);
 
             var content = response.Content; // raw content as string
