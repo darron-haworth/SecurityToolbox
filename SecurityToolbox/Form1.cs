@@ -8,7 +8,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SecurityToolbox
 {
@@ -154,6 +156,131 @@ namespace SecurityToolbox
                 BootStrapGrid();
             }
 
+        }
+
+        private void btnHexDecode_Click(object sender, EventArgs e)
+        {
+            txtEncodingOutput.Text = "";
+            try
+            {
+                txtEncodingOutput.Text = HexDecodeString(txtEncodingInput.Text);
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+        }
+
+        private void btnHexEncode_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtEncodingOutput.Text = HexEncodeString(txtEncodingInput.Text);
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+        }
+
+        protected string HexDecodeString(string hexString)
+        {
+            if (hexString == null || (hexString.Length & 1) == 1)
+            {
+                throw new ArgumentException();
+            }
+            var sb = new StringBuilder();
+            for (var i = 0; i < hexString.Length; i += 2)
+            {
+                var hexChar = hexString.Substring(i, 2);
+                sb.Append((char)Convert.ToByte(hexChar, 16));
+            }
+            return sb.ToString();
+        }
+
+        protected string HexEncodeString(string inputString)
+        {
+            byte[] ba = Encoding.Default.GetBytes(inputString);
+            return BitConverter.ToString(ba).Replace("-", "");
+        }
+
+        private void btnB64Encode_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] data = System.Text.ASCIIEncoding.ASCII.GetBytes(txtEncodingInput.Text);
+                txtEncodingOutput.Text = System.Convert.ToBase64String(data);
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+        }
+
+        private void btnB64Decode_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] data = Convert.FromBase64String(txtEncodingInput.Text);
+                txtEncodingOutput.Text = Encoding.UTF8.GetString(data);
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+        }
+
+        private void btnUrlEncode_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtEncodingOutput.Text = System.Net.WebUtility.UrlEncode(txtEncodingInput.Text);
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+        }
+
+        private void btnUrlDecode_Click(object sender, EventArgs e)
+        {
+            txtEncodingOutput.Text = "";
+            try
+            {
+                txtEncodingOutput.Text = System.Net.WebUtility.UrlDecode(txtEncodingInput.Text);
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+        }
+
+        private void btnXmlPretty_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtEncodingOutput.Text = FormatXml(txtEncodingInput.Text);
+
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+        }
+
+        string FormatXml(string xml)
+        {
+            try
+            {
+                XDocument doc = XDocument.Parse(xml);
+                return doc.ToString();
+            }
+            catch (Exception ex)
+            {
+                xml = ex.Message;
+                // Handle and throw if fatal exception here; don't just ignore them
+                return xml;
+            }
         }
     }
 }

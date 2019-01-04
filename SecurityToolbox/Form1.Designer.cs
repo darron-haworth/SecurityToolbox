@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecToolForm));
             this.tabIpTools = new System.Windows.Forms.TabControl();
             this.ipTools = new System.Windows.Forms.TabPage();
+            this.lblTabHeader = new System.Windows.Forms.Label();
             this.lblElapsedValue = new System.Windows.Forms.Label();
             this.lblElapsed = new System.Windows.Forms.Label();
             this.lblCountValue = new System.Windows.Forms.Label();
@@ -48,16 +49,29 @@
             this.txtIpOutput = new System.Windows.Forms.TextBox();
             this.txtIpInput = new System.Windows.Forms.TextBox();
             this.encodingTools = new System.Windows.Forms.TabPage();
+            this.txtEncodingHeader = new System.Windows.Forms.Label();
+            this.btnXmlPretty = new System.Windows.Forms.Button();
+            this.btnEncodingReset = new System.Windows.Forms.Button();
+            this.btnUrlDecode = new System.Windows.Forms.Button();
+            this.btnUrlEncode = new System.Windows.Forms.Button();
+            this.btnB64Decode = new System.Windows.Forms.Button();
+            this.btnB64Encode = new System.Windows.Forms.Button();
+            this.btnHexDecode = new System.Windows.Forms.Button();
+            this.btnHexEncode = new System.Windows.Forms.Button();
+            this.lblEncodingOutputFieldText = new System.Windows.Forms.Label();
+            this.txtEncodingOutput = new System.Windows.Forms.TextBox();
+            this.lblEncodingInputFieldText = new System.Windows.Forms.Label();
+            this.txtEncodingInput = new System.Windows.Forms.TextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsFileOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.iPLookupAPIKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTabHeader = new System.Windows.Forms.Label();
             this.rootIpAddressLookupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabIpTools.SuspendLayout();
             this.ipTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgIpResults)).BeginInit();
+            this.encodingTools.SuspendLayout();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rootIpAddressLookupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +90,7 @@
             // 
             // ipTools
             // 
+            this.ipTools.Controls.Add(this.lblTabHeader);
             this.ipTools.Controls.Add(this.lblElapsedValue);
             this.ipTools.Controls.Add(this.lblElapsed);
             this.ipTools.Controls.Add(this.lblCountValue);
@@ -97,6 +112,20 @@
             this.ipTools.TabIndex = 0;
             this.ipTools.Text = "Public IP Lookup";
             this.ipTools.UseVisualStyleBackColor = true;
+            // 
+            // lblTabHeader
+            // 
+            this.lblTabHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTabHeader.AutoSize = true;
+            this.lblTabHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTabHeader.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTabHeader.Location = new System.Drawing.Point(805, 0);
+            this.lblTabHeader.Name = "lblTabHeader";
+            this.lblTabHeader.Size = new System.Drawing.Size(151, 27);
+            this.lblTabHeader.TabIndex = 2;
+            this.lblTabHeader.Text = "Public IP Lookup";
+            this.lblTabHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTabHeader.UseCompatibleTextRendering = true;
             // 
             // lblElapsedValue
             // 
@@ -246,12 +275,154 @@
             // 
             // encodingTools
             // 
+            this.encodingTools.Controls.Add(this.txtEncodingHeader);
+            this.encodingTools.Controls.Add(this.btnXmlPretty);
+            this.encodingTools.Controls.Add(this.btnEncodingReset);
+            this.encodingTools.Controls.Add(this.btnUrlDecode);
+            this.encodingTools.Controls.Add(this.btnUrlEncode);
+            this.encodingTools.Controls.Add(this.btnB64Decode);
+            this.encodingTools.Controls.Add(this.btnB64Encode);
+            this.encodingTools.Controls.Add(this.btnHexDecode);
+            this.encodingTools.Controls.Add(this.btnHexEncode);
+            this.encodingTools.Controls.Add(this.lblEncodingOutputFieldText);
+            this.encodingTools.Controls.Add(this.txtEncodingOutput);
+            this.encodingTools.Controls.Add(this.lblEncodingInputFieldText);
+            this.encodingTools.Controls.Add(this.txtEncodingInput);
             this.encodingTools.Location = new System.Drawing.Point(4, 22);
             this.encodingTools.Name = "encodingTools";
             this.encodingTools.Size = new System.Drawing.Size(1842, 767);
             this.encodingTools.TabIndex = 1;
             this.encodingTools.Text = "Encoding Tools";
             this.encodingTools.UseVisualStyleBackColor = true;
+            // 
+            // txtEncodingHeader
+            // 
+            this.txtEncodingHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEncodingHeader.AutoSize = true;
+            this.txtEncodingHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEncodingHeader.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.txtEncodingHeader.Location = new System.Drawing.Point(811, 7);
+            this.txtEncodingHeader.Name = "txtEncodingHeader";
+            this.txtEncodingHeader.Size = new System.Drawing.Size(139, 27);
+            this.txtEncodingHeader.TabIndex = 12;
+            this.txtEncodingHeader.Text = "Encoding Tools";
+            this.txtEncodingHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.txtEncodingHeader.UseCompatibleTextRendering = true;
+            // 
+            // btnXmlPretty
+            // 
+            this.btnXmlPretty.Location = new System.Drawing.Point(930, 685);
+            this.btnXmlPretty.Name = "btnXmlPretty";
+            this.btnXmlPretty.Size = new System.Drawing.Size(88, 23);
+            this.btnXmlPretty.TabIndex = 11;
+            this.btnXmlPretty.Text = "XML Format";
+            this.btnXmlPretty.UseVisualStyleBackColor = true;
+            this.btnXmlPretty.Click += new System.EventHandler(this.btnXmlPretty_Click);
+            // 
+            // btnEncodingReset
+            // 
+            this.btnEncodingReset.Location = new System.Drawing.Point(29, 685);
+            this.btnEncodingReset.Name = "btnEncodingReset";
+            this.btnEncodingReset.Size = new System.Drawing.Size(88, 23);
+            this.btnEncodingReset.TabIndex = 10;
+            this.btnEncodingReset.Text = "Reset Form";
+            this.btnEncodingReset.UseVisualStyleBackColor = true;
+            // 
+            // btnUrlDecode
+            // 
+            this.btnUrlDecode.Location = new System.Drawing.Point(709, 685);
+            this.btnUrlDecode.Name = "btnUrlDecode";
+            this.btnUrlDecode.Size = new System.Drawing.Size(88, 23);
+            this.btnUrlDecode.TabIndex = 9;
+            this.btnUrlDecode.Text = "URL Decode";
+            this.btnUrlDecode.UseVisualStyleBackColor = true;
+            this.btnUrlDecode.Click += new System.EventHandler(this.btnUrlDecode_Click);
+            // 
+            // btnUrlEncode
+            // 
+            this.btnUrlEncode.Location = new System.Drawing.Point(615, 685);
+            this.btnUrlEncode.Name = "btnUrlEncode";
+            this.btnUrlEncode.Size = new System.Drawing.Size(88, 23);
+            this.btnUrlEncode.TabIndex = 8;
+            this.btnUrlEncode.Text = "URL Encode";
+            this.btnUrlEncode.UseVisualStyleBackColor = true;
+            this.btnUrlEncode.Click += new System.EventHandler(this.btnUrlEncode_Click);
+            // 
+            // btnB64Decode
+            // 
+            this.btnB64Decode.Location = new System.Drawing.Point(478, 685);
+            this.btnB64Decode.Name = "btnB64Decode";
+            this.btnB64Decode.Size = new System.Drawing.Size(88, 23);
+            this.btnB64Decode.TabIndex = 7;
+            this.btnB64Decode.Text = "B64 Decode";
+            this.btnB64Decode.UseVisualStyleBackColor = true;
+            this.btnB64Decode.Click += new System.EventHandler(this.btnB64Decode_Click);
+            // 
+            // btnB64Encode
+            // 
+            this.btnB64Encode.Location = new System.Drawing.Point(384, 685);
+            this.btnB64Encode.Name = "btnB64Encode";
+            this.btnB64Encode.Size = new System.Drawing.Size(88, 23);
+            this.btnB64Encode.TabIndex = 6;
+            this.btnB64Encode.Text = "B64 Encode";
+            this.btnB64Encode.UseVisualStyleBackColor = true;
+            this.btnB64Encode.Click += new System.EventHandler(this.btnB64Encode_Click);
+            // 
+            // btnHexDecode
+            // 
+            this.btnHexDecode.Location = new System.Drawing.Point(257, 685);
+            this.btnHexDecode.Name = "btnHexDecode";
+            this.btnHexDecode.Size = new System.Drawing.Size(88, 23);
+            this.btnHexDecode.TabIndex = 5;
+            this.btnHexDecode.Text = "HEX Decode";
+            this.btnHexDecode.UseVisualStyleBackColor = true;
+            this.btnHexDecode.Click += new System.EventHandler(this.btnHexDecode_Click);
+            // 
+            // btnHexEncode
+            // 
+            this.btnHexEncode.Location = new System.Drawing.Point(163, 685);
+            this.btnHexEncode.Name = "btnHexEncode";
+            this.btnHexEncode.Size = new System.Drawing.Size(88, 23);
+            this.btnHexEncode.TabIndex = 4;
+            this.btnHexEncode.Text = "HEX Encode";
+            this.btnHexEncode.UseVisualStyleBackColor = true;
+            this.btnHexEncode.Click += new System.EventHandler(this.btnHexEncode_Click);
+            // 
+            // lblEncodingOutputFieldText
+            // 
+            this.lblEncodingOutputFieldText.AutoSize = true;
+            this.lblEncodingOutputFieldText.Location = new System.Drawing.Point(29, 230);
+            this.lblEncodingOutputFieldText.Name = "lblEncodingOutputFieldText";
+            this.lblEncodingOutputFieldText.Size = new System.Drawing.Size(55, 13);
+            this.lblEncodingOutputFieldText.TabIndex = 3;
+            this.lblEncodingOutputFieldText.Text = "Input Text";
+            // 
+            // txtEncodingOutput
+            // 
+            this.txtEncodingOutput.Location = new System.Drawing.Point(29, 249);
+            this.txtEncodingOutput.Multiline = true;
+            this.txtEncodingOutput.Name = "txtEncodingOutput";
+            this.txtEncodingOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtEncodingOutput.Size = new System.Drawing.Size(1790, 416);
+            this.txtEncodingOutput.TabIndex = 2;
+            // 
+            // lblEncodingInputFieldText
+            // 
+            this.lblEncodingInputFieldText.AutoSize = true;
+            this.lblEncodingInputFieldText.Location = new System.Drawing.Point(29, 21);
+            this.lblEncodingInputFieldText.Name = "lblEncodingInputFieldText";
+            this.lblEncodingInputFieldText.Size = new System.Drawing.Size(55, 13);
+            this.lblEncodingInputFieldText.TabIndex = 1;
+            this.lblEncodingInputFieldText.Text = "Input Text";
+            // 
+            // txtEncodingInput
+            // 
+            this.txtEncodingInput.Location = new System.Drawing.Point(29, 40);
+            this.txtEncodingInput.Multiline = true;
+            this.txtEncodingInput.Name = "txtEncodingInput";
+            this.txtEncodingInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtEncodingInput.Size = new System.Drawing.Size(1790, 171);
+            this.txtEncodingInput.TabIndex = 0;
             // 
             // menuStrip
             // 
@@ -292,22 +463,6 @@
             this.tsExit.Size = new System.Drawing.Size(116, 22);
             this.tsExit.Text = "Exit";
             // 
-            // lblTabHeader
-            // 
-            this.lblTabHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTabHeader.AutoSize = true;
-            this.lblTabHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTabHeader.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTabHeader.Location = new System.Drawing.Point(833, 32);
-            this.lblTabHeader.Name = "lblTabHeader";
-            this.lblTabHeader.Size = new System.Drawing.Size(194, 34);
-            this.lblTabHeader.TabIndex = 2;
-            this.lblTabHeader.Text = "Public IP Lookup";
-            this.lblTabHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTabHeader.UseCompatibleTextRendering = true;
-            // 
             // rootIpAddressLookupBindingSource
             // 
             this.rootIpAddressLookupBindingSource.DataSource = typeof(SecurityToolbox.Models.RootIpAddressLookup);
@@ -318,7 +473,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1884, 889);
-            this.Controls.Add(this.lblTabHeader);
             this.Controls.Add(this.tabIpTools);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -329,6 +483,8 @@
             this.ipTools.ResumeLayout(false);
             this.ipTools.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgIpResults)).EndInit();
+            this.encodingTools.ResumeLayout(false);
+            this.encodingTools.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rootIpAddressLookupBindingSource)).EndInit();
@@ -364,6 +520,19 @@
         private System.Windows.Forms.Label lblElapsed;
         private System.Windows.Forms.Label lblCountValue;
         private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Button btnXmlPretty;
+        private System.Windows.Forms.Button btnEncodingReset;
+        private System.Windows.Forms.Button btnUrlDecode;
+        private System.Windows.Forms.Button btnUrlEncode;
+        private System.Windows.Forms.Button btnB64Decode;
+        private System.Windows.Forms.Button btnB64Encode;
+        private System.Windows.Forms.Button btnHexDecode;
+        private System.Windows.Forms.Button btnHexEncode;
+        private System.Windows.Forms.Label lblEncodingOutputFieldText;
+        private System.Windows.Forms.TextBox txtEncodingOutput;
+        private System.Windows.Forms.Label lblEncodingInputFieldText;
+        private System.Windows.Forms.TextBox txtEncodingInput;
+        private System.Windows.Forms.Label txtEncodingHeader;
     }
 }
 
