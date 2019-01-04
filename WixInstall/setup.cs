@@ -29,7 +29,7 @@ public class Script
         //Passes custom action ShowCustomDialog for instantiating and popping up the CLR dialog.
         //project.InjectClrDialog("ShowCustomDialog", Dialogs.InstallDirDlg, Dialogs.VerifyReadyDlg);
         project.MajorUpgradeStrategy = MajorUpgradeStrategy.Default;
-        project.Version = new Version("1.2.0.0");
+        project.Version = new Version("1.2.1.0");
         project.InstallScope = InstallScope.perMachine;
         project.Platform = Platform.x64;
         project.OutDir = @"MSI-Output";
