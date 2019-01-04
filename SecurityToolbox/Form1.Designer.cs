@@ -327,6 +327,7 @@
             this.btnEncodingReset.TabIndex = 10;
             this.btnEncodingReset.Text = "Reset Form";
             this.btnEncodingReset.UseVisualStyleBackColor = true;
+            this.btnEncodingReset.Click += new System.EventHandler(this.btnEncodingReset_Click);
             // 
             // btnUrlDecode
             // 

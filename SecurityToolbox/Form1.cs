@@ -282,5 +282,11 @@ namespace SecurityToolbox
                 return xml;
             }
         }
+
+        private void btnEncodingReset_Click(object sender, EventArgs e)
+        {
+            txtEncodingInput.Text = "";
+            txtEncodingOutput.Text = "";
+        }
     }
 }
