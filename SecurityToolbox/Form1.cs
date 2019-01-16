@@ -288,5 +288,19 @@ namespace SecurityToolbox
             txtEncodingInput.Text = "";
             txtEncodingOutput.Text = "";
         }
+
+        private void tsExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string version = System.Windows.Forms.Application.ProductVersion;
+            this.Text = String.Format("My Application Version {0}", version);
+            string appNameVersion = String.Format("Security Toolbox v{0}\r\n", version);
+            string appSupportInfo = string.Format("Support Contact: darron.haworth@gmail.com");
+            MessageBox.Show(String.Format("{0}{1}", appNameVersion, appSupportInfo));
+        }
     }
 }

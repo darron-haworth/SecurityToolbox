@@ -64,9 +64,9 @@
             this.txtEncodingInput = new System.Windows.Forms.TextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsFileOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.iPLookupAPIKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rootIpAddressLookupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabIpTools.SuspendLayout();
             this.ipTools.SuspendLayout();
@@ -428,7 +428,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1884, 24);
@@ -438,31 +439,32 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsFileOptions,
             this.tsExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // tsFileOptions
-            // 
-            this.tsFileOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iPLookupAPIKeyToolStripMenuItem});
-            this.tsFileOptions.Name = "tsFileOptions";
-            this.tsFileOptions.Size = new System.Drawing.Size(116, 22);
-            this.tsFileOptions.Text = "Options";
-            // 
-            // iPLookupAPIKeyToolStripMenuItem
-            // 
-            this.iPLookupAPIKeyToolStripMenuItem.Name = "iPLookupAPIKeyToolStripMenuItem";
-            this.iPLookupAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.iPLookupAPIKeyToolStripMenuItem.Text = "IP Lookup API Key";
-            // 
             // tsExit
             // 
             this.tsExit.Name = "tsExit";
-            this.tsExit.Size = new System.Drawing.Size(116, 22);
+            this.tsExit.Size = new System.Drawing.Size(180, 22);
             this.tsExit.Text = "Exit";
+            this.tsExit.Click += new System.EventHandler(this.tsExit_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // rootIpAddressLookupBindingSource
             // 
@@ -509,8 +511,6 @@
         private System.Windows.Forms.TabPage encodingTools;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsFileOptions;
-        private System.Windows.Forms.ToolStripMenuItem iPLookupAPIKeyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsExit;
         private System.Windows.Forms.Label lblTabHeader;
         private System.Windows.Forms.TextBox txtIpOutput;
@@ -534,6 +534,8 @@
         private System.Windows.Forms.Label lblEncodingInputFieldText;
         private System.Windows.Forms.TextBox txtEncodingInput;
         private System.Windows.Forms.Label txtEncodingHeader;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
