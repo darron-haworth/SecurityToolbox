@@ -3,25 +3,30 @@ using SecurityToolbox.Models;
 using SecurityToolbox.Repository;
 using SecurityToolbox.Utilities;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
+
+using YamlDotNet.Serialization;
+
+
 namespace SecurityToolbox
 {
     public partial class SecToolForm : Form
     {
-        private string _elapsedTime = "0:00";
         public SecToolForm()
         {
             InitializeComponent();
             BootStrapGrid();
-
+            var tabPage = tabIpTools.TabPages["apigeeSailpointEncDec"];
+            
+            tabIpTools.TabPages.Remove(tabPage);
         }
 
         public void BootStrapGrid()
@@ -301,6 +306,59 @@ namespace SecurityToolbox
             string appNameVersion = String.Format("Security Toolbox v{0}\r\n", version);
             string appSupportInfo = string.Format("Support Contact: darron.haworth@gmail.com");
             MessageBox.Show(String.Format("{0}{1}", appNameVersion, appSupportInfo));
+        }
+
+        private void btnYamlToJson_Click(object sender, EventArgs e)
+        {
+            // convert string/file to YAML object
+            try
+            {
+                var r = new StringReader(txtYaml.Text);
+                var deserializer = new DeserializerBuilder().Build();
+                var yamlObject = deserializer.Deserialize(r);
+
+                var serializer = new SerializerBuilder()
+                    .JsonCompatible()
+                    .Build();
+
+                var json = serializer.Serialize(yamlObject);
+                var jObj = Newtonsoft.Json.Linq.JObject.Parse(json);
+                var formatted = jObj.ToString(Newtonsoft.Json.Formatting.Indented);
+
+                txtJson.Text = formatted;
+            }
+            catch(Exception ex)
+            {
+                txtJson.Text = ex.Message;
+            }           
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            resetForm();
+        }
+
+        private void resetForm()
+        {
+            txtYaml.Text = "";
+            txtJson.Text = "";
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                var x = txtJson.Text;
+                if (!string.IsNullOrEmpty(x))
+                {
+                    Clipboard.SetText(x);
+                }
+            }
+            catch(Exception ex)
+            {
+                txtYaml.Text = ex.Message;
+            }
         }
     }
 }
