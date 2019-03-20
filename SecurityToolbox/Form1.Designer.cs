@@ -49,6 +49,7 @@
             this.txtIpOutput = new System.Windows.Forms.TextBox();
             this.txtIpInput = new System.Windows.Forms.TextBox();
             this.encodingTools = new System.Windows.Forms.TabPage();
+            this.btnDecodeJwt = new System.Windows.Forms.Button();
             this.txtEncodingHeader = new System.Windows.Forms.Label();
             this.btnXmlPretty = new System.Windows.Forms.Button();
             this.btnEncodingReset = new System.Windows.Forms.Button();
@@ -63,26 +64,27 @@
             this.lblEncodingInputFieldText = new System.Windows.Forms.Label();
             this.txtEncodingInput = new System.Windows.Forms.TextBox();
             this.apigeeSailpointEncDec = new System.Windows.Forms.TabPage();
+            this.tabYamlToJson = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnYamlToJson = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblYaml = new System.Windows.Forms.Label();
+            this.txtJson = new System.Windows.Forms.TextBox();
+            this.txtYaml = new System.Windows.Forms.TextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabYamlToJson = new System.Windows.Forms.TabPage();
-            this.txtYaml = new System.Windows.Forms.TextBox();
-            this.txtJson = new System.Windows.Forms.TextBox();
-            this.lblYaml = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnYamlToJson = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.rootIpAddressLookupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnAesKeyIv = new System.Windows.Forms.Button();
             this.tabIpTools.SuspendLayout();
             this.ipTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgIpResults)).BeginInit();
             this.encodingTools.SuspendLayout();
-            this.menuStrip.SuspendLayout();
             this.tabYamlToJson.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rootIpAddressLookupBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -287,6 +289,8 @@
             // 
             // encodingTools
             // 
+            this.encodingTools.Controls.Add(this.btnAesKeyIv);
+            this.encodingTools.Controls.Add(this.btnDecodeJwt);
             this.encodingTools.Controls.Add(this.txtEncodingHeader);
             this.encodingTools.Controls.Add(this.btnXmlPretty);
             this.encodingTools.Controls.Add(this.btnEncodingReset);
@@ -306,6 +310,16 @@
             this.encodingTools.TabIndex = 1;
             this.encodingTools.Text = "Encoding Tools";
             this.encodingTools.UseVisualStyleBackColor = true;
+            // 
+            // btnDecodeJwt
+            // 
+            this.btnDecodeJwt.Location = new System.Drawing.Point(1064, 685);
+            this.btnDecodeJwt.Name = "btnDecodeJwt";
+            this.btnDecodeJwt.Size = new System.Drawing.Size(101, 23);
+            this.btnDecodeJwt.TabIndex = 13;
+            this.btnDecodeJwt.Text = "Decode JWT";
+            this.btnDecodeJwt.UseVisualStyleBackColor = true;
+            this.btnDecodeJwt.Click += new System.EventHandler(this.btnDecodeJwt_Click);
             // 
             // txtEncodingHeader
             // 
@@ -446,6 +460,92 @@
             this.apigeeSailpointEncDec.Text = "Apigee Credential Encryption";
             this.apigeeSailpointEncDec.UseVisualStyleBackColor = true;
             // 
+            // tabYamlToJson
+            // 
+            this.tabYamlToJson.Controls.Add(this.linkLabel1);
+            this.tabYamlToJson.Controls.Add(this.btnReset);
+            this.tabYamlToJson.Controls.Add(this.btnYamlToJson);
+            this.tabYamlToJson.Controls.Add(this.label1);
+            this.tabYamlToJson.Controls.Add(this.lblYaml);
+            this.tabYamlToJson.Controls.Add(this.txtJson);
+            this.tabYamlToJson.Controls.Add(this.txtYaml);
+            this.tabYamlToJson.Location = new System.Drawing.Point(4, 22);
+            this.tabYamlToJson.Name = "tabYamlToJson";
+            this.tabYamlToJson.Padding = new System.Windows.Forms.Padding(3);
+            this.tabYamlToJson.Size = new System.Drawing.Size(1842, 767);
+            this.tabYamlToJson.TabIndex = 3;
+            this.tabYamlToJson.Text = "Yaml to Json";
+            this.tabYamlToJson.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(221, 726);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(121, 13);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Copy JSON to Clipboard";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(140, 721);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 5;
+            this.btnReset.Text = "Reset Form";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnYamlToJson
+            // 
+            this.btnYamlToJson.Location = new System.Drawing.Point(19, 721);
+            this.btnYamlToJson.Name = "btnYamlToJson";
+            this.btnYamlToJson.Size = new System.Drawing.Size(115, 23);
+            this.btnYamlToJson.TabIndex = 4;
+            this.btnYamlToJson.Text = "YAML to JSON";
+            this.btnYamlToJson.UseVisualStyleBackColor = true;
+            this.btnYamlToJson.Click += new System.EventHandler(this.btnYamlToJson_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(921, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "JSON";
+            // 
+            // lblYaml
+            // 
+            this.lblYaml.AutoSize = true;
+            this.lblYaml.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYaml.Location = new System.Drawing.Point(16, 48);
+            this.lblYaml.Name = "lblYaml";
+            this.lblYaml.Size = new System.Drawing.Size(49, 17);
+            this.lblYaml.TabIndex = 2;
+            this.lblYaml.Text = "YAML";
+            // 
+            // txtJson
+            // 
+            this.txtJson.Location = new System.Drawing.Point(924, 67);
+            this.txtJson.Multiline = true;
+            this.txtJson.Name = "txtJson";
+            this.txtJson.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtJson.Size = new System.Drawing.Size(902, 636);
+            this.txtJson.TabIndex = 1;
+            // 
+            // txtYaml
+            // 
+            this.txtYaml.Location = new System.Drawing.Point(16, 67);
+            this.txtYaml.Multiline = true;
+            this.txtYaml.Name = "txtYaml";
+            this.txtYaml.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtYaml.Size = new System.Drawing.Size(902, 636);
+            this.txtYaml.TabIndex = 0;
+            // 
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -487,95 +587,19 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // tabYamlToJson
-            // 
-            this.tabYamlToJson.Controls.Add(this.linkLabel1);
-            this.tabYamlToJson.Controls.Add(this.btnReset);
-            this.tabYamlToJson.Controls.Add(this.btnYamlToJson);
-            this.tabYamlToJson.Controls.Add(this.label1);
-            this.tabYamlToJson.Controls.Add(this.lblYaml);
-            this.tabYamlToJson.Controls.Add(this.txtJson);
-            this.tabYamlToJson.Controls.Add(this.txtYaml);
-            this.tabYamlToJson.Location = new System.Drawing.Point(4, 22);
-            this.tabYamlToJson.Name = "tabYamlToJson";
-            this.tabYamlToJson.Padding = new System.Windows.Forms.Padding(3);
-            this.tabYamlToJson.Size = new System.Drawing.Size(1842, 767);
-            this.tabYamlToJson.TabIndex = 3;
-            this.tabYamlToJson.Text = "Yaml to Json";
-            this.tabYamlToJson.UseVisualStyleBackColor = true;
-            // 
-            // txtYaml
-            // 
-            this.txtYaml.Location = new System.Drawing.Point(16, 67);
-            this.txtYaml.Multiline = true;
-            this.txtYaml.Name = "txtYaml";
-            this.txtYaml.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtYaml.Size = new System.Drawing.Size(902, 636);
-            this.txtYaml.TabIndex = 0;
-            // 
-            // txtJson
-            // 
-            this.txtJson.Location = new System.Drawing.Point(924, 67);
-            this.txtJson.Multiline = true;
-            this.txtJson.Name = "txtJson";
-            this.txtJson.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtJson.Size = new System.Drawing.Size(902, 636);
-            this.txtJson.TabIndex = 1;
-            // 
-            // lblYaml
-            // 
-            this.lblYaml.AutoSize = true;
-            this.lblYaml.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYaml.Location = new System.Drawing.Point(16, 48);
-            this.lblYaml.Name = "lblYaml";
-            this.lblYaml.Size = new System.Drawing.Size(49, 17);
-            this.lblYaml.TabIndex = 2;
-            this.lblYaml.Text = "YAML";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(921, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "JSON";
-            // 
-            // btnYamlToJson
-            // 
-            this.btnYamlToJson.Location = new System.Drawing.Point(19, 721);
-            this.btnYamlToJson.Name = "btnYamlToJson";
-            this.btnYamlToJson.Size = new System.Drawing.Size(115, 23);
-            this.btnYamlToJson.TabIndex = 4;
-            this.btnYamlToJson.Text = "YAML to JSON";
-            this.btnYamlToJson.UseVisualStyleBackColor = true;
-            this.btnYamlToJson.Click += new System.EventHandler(this.btnYamlToJson_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(140, 721);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 5;
-            this.btnReset.Text = "Reset Form";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // rootIpAddressLookupBindingSource
             // 
             this.rootIpAddressLookupBindingSource.DataSource = typeof(SecurityToolbox.Models.RootIpAddressLookup);
             // 
-            // linkLabel1
+            // btnAesKeyIv
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(221, 726);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(121, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Copy JSON to Clipboard";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.btnAesKeyIv.Location = new System.Drawing.Point(1238, 685);
+            this.btnAesKeyIv.Name = "btnAesKeyIv";
+            this.btnAesKeyIv.Size = new System.Drawing.Size(75, 23);
+            this.btnAesKeyIv.TabIndex = 14;
+            this.btnAesKeyIv.Text = "AES-Key-IV";
+            this.btnAesKeyIv.UseVisualStyleBackColor = true;
+            this.btnAesKeyIv.Click += new System.EventHandler(this.btnAesKeyIv_Click);
             // 
             // SecToolForm
             // 
@@ -595,10 +619,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgIpResults)).EndInit();
             this.encodingTools.ResumeLayout(false);
             this.encodingTools.PerformLayout();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.tabYamlToJson.ResumeLayout(false);
             this.tabYamlToJson.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rootIpAddressLookupBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -654,6 +678,8 @@
         private System.Windows.Forms.Button btnYamlToJson;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btnDecodeJwt;
+        private System.Windows.Forms.Button btnAesKeyIv;
     }
 }
 

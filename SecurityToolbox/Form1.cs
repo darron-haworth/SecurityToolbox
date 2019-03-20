@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -359,6 +360,31 @@ namespace SecurityToolbox
             {
                 txtYaml.Text = ex.Message;
             }
+        }
+
+        private void btnDecodeJwt_Click(object sender, EventArgs e)
+        {
+            txtEncodingOutput.Text = new DecodeJwt().DecodeJwtToken(txtEncodingInput.Text);
+        }
+
+        private void btnAesKeyIv_Click(object sender, EventArgs e)
+        {
+            RijndaelManaged aesEncryption = new RijndaelManaged();
+            aesEncryption.KeySize = 256;
+            aesEncryption.BlockSize = 128;
+            aesEncryption.Mode = CipherMode.CBC;
+            aesEncryption.Padding = PaddingMode.PKCS7;
+            aesEncryption.GenerateIV();
+            string ivStr = Convert.ToBase64String(aesEncryption.IV);
+            aesEncryption.GenerateKey();
+            string keyStr = Convert.ToBase64String(aesEncryption.Key);
+            string completeKey = string.Format("IV: {0}\r\nKey: {1}", ivStr, keyStr); 
+
+
+            txtEncodingOutput.Text = completeKey;
+
+
+
         }
     }
 }
