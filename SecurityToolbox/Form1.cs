@@ -386,5 +386,31 @@ namespace SecurityToolbox
 
 
         }
+
+        private void btnHtmlEncode_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                txtEncodingOutput.Text = System.Net.WebUtility.HtmlEncode(txtEncodingInput.Text);
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+
+        }
+
+        private void btnBtnDecode_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtEncodingOutput.Text = System.Net.WebUtility.HtmlDecode(txtEncodingInput.Text);
+            }
+            catch (Exception ex)
+            {
+                txtEncodingOutput.Text = ex.Message;
+            }
+        }
     }
 }

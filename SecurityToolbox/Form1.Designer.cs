@@ -49,6 +49,7 @@
             this.txtIpOutput = new System.Windows.Forms.TextBox();
             this.txtIpInput = new System.Windows.Forms.TextBox();
             this.encodingTools = new System.Windows.Forms.TabPage();
+            this.btnAesKeyIv = new System.Windows.Forms.Button();
             this.btnDecodeJwt = new System.Windows.Forms.Button();
             this.txtEncodingHeader = new System.Windows.Forms.Label();
             this.btnXmlPretty = new System.Windows.Forms.Button();
@@ -78,7 +79,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rootIpAddressLookupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnAesKeyIv = new System.Windows.Forms.Button();
+            this.btnHtmlEncode = new System.Windows.Forms.Button();
+            this.btnBtnDecode = new System.Windows.Forms.Button();
             this.tabIpTools.SuspendLayout();
             this.ipTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgIpResults)).BeginInit();
@@ -289,6 +291,8 @@
             // 
             // encodingTools
             // 
+            this.encodingTools.Controls.Add(this.btnBtnDecode);
+            this.encodingTools.Controls.Add(this.btnHtmlEncode);
             this.encodingTools.Controls.Add(this.btnAesKeyIv);
             this.encodingTools.Controls.Add(this.btnDecodeJwt);
             this.encodingTools.Controls.Add(this.txtEncodingHeader);
@@ -310,6 +314,16 @@
             this.encodingTools.TabIndex = 1;
             this.encodingTools.Text = "Encoding Tools";
             this.encodingTools.UseVisualStyleBackColor = true;
+            // 
+            // btnAesKeyIv
+            // 
+            this.btnAesKeyIv.Location = new System.Drawing.Point(1238, 685);
+            this.btnAesKeyIv.Name = "btnAesKeyIv";
+            this.btnAesKeyIv.Size = new System.Drawing.Size(75, 23);
+            this.btnAesKeyIv.TabIndex = 14;
+            this.btnAesKeyIv.Text = "AES-Key-IV";
+            this.btnAesKeyIv.UseVisualStyleBackColor = true;
+            this.btnAesKeyIv.Click += new System.EventHandler(this.btnAesKeyIv_Click);
             // 
             // btnDecodeJwt
             // 
@@ -591,15 +605,25 @@
             // 
             this.rootIpAddressLookupBindingSource.DataSource = typeof(SecurityToolbox.Models.RootIpAddressLookup);
             // 
-            // btnAesKeyIv
+            // btnHtmlEncode
             // 
-            this.btnAesKeyIv.Location = new System.Drawing.Point(1238, 685);
-            this.btnAesKeyIv.Name = "btnAesKeyIv";
-            this.btnAesKeyIv.Size = new System.Drawing.Size(75, 23);
-            this.btnAesKeyIv.TabIndex = 14;
-            this.btnAesKeyIv.Text = "AES-Key-IV";
-            this.btnAesKeyIv.UseVisualStyleBackColor = true;
-            this.btnAesKeyIv.Click += new System.EventHandler(this.btnAesKeyIv_Click);
+            this.btnHtmlEncode.Location = new System.Drawing.Point(615, 724);
+            this.btnHtmlEncode.Name = "btnHtmlEncode";
+            this.btnHtmlEncode.Size = new System.Drawing.Size(88, 23);
+            this.btnHtmlEncode.TabIndex = 15;
+            this.btnHtmlEncode.Text = "HTML Encode";
+            this.btnHtmlEncode.UseVisualStyleBackColor = true;
+            this.btnHtmlEncode.Click += new System.EventHandler(this.btnHtmlEncode_Click);
+            // 
+            // btnBtnDecode
+            // 
+            this.btnBtnDecode.Location = new System.Drawing.Point(709, 724);
+            this.btnBtnDecode.Name = "btnBtnDecode";
+            this.btnBtnDecode.Size = new System.Drawing.Size(88, 23);
+            this.btnBtnDecode.TabIndex = 16;
+            this.btnBtnDecode.Text = "HTML Decode";
+            this.btnBtnDecode.UseVisualStyleBackColor = true;
+            this.btnBtnDecode.Click += new System.EventHandler(this.btnBtnDecode_Click);
             // 
             // SecToolForm
             // 
@@ -680,6 +704,8 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnDecodeJwt;
         private System.Windows.Forms.Button btnAesKeyIv;
+        private System.Windows.Forms.Button btnBtnDecode;
+        private System.Windows.Forms.Button btnHtmlEncode;
     }
 }
 
